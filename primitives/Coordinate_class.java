@@ -1,31 +1,59 @@
-package primitives;
+package Primitives;
 
+import static Primitives.Util.*;
+
+/**
+ * Class Coordinate is the basic class representing a coordinate for Cartesian
+ * coordinate system. The class is based on Util controlling the accuracy.
+ *
+ * @author Dan Zilberstein
+ */
 public final class Coordinate {
+    /**
+     * Coordinate value, intentionally "package-friendly" due to performance
+     * constraints
+     */
     final double _coord;
 
+    /**
+     * Coordinate constructor receiving a coordinate value
+     *
+     * @param coord coordinate value
+     */
     public Coordinate(double coord) {
-        this._coord = Util.alignZero(coord);
+        // if it too close to zero make it zero
+        _coord = alignZero(coord);
     }
 
+    /**
+     * Copy constructor for coordinate
+     *
+     * @param other
+     */
     public Coordinate(Coordinate other) {
-        this._coord = other._coord;
+        _coord = other._coord;
     }
 
+    /**
+     * Coordinate value getter
+     *
+     * @return coordinate value
+     */
     public double get() {
-        return this._coord;
+        return _coord;
     }
 
+    /*************** Admin *****************/
+    @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        } else if (obj == null) {
-            return false;
-        } else {
-            return !(obj instanceof Coordinate) ? false : Util.isZero(this._coord - ((Coordinate)obj)._coord);
-        }
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (!(obj instanceof Coordinate)) return false;
+        return isZero(_coord - ((Coordinate)obj)._coord);
     }
 
+    @Override
     public String toString() {
-        return this._coord.makeConcatWithConstants<invokedynamic>(this._coord);
+        return "" + _coord;
     }
 }
