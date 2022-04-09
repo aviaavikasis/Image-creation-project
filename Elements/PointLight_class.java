@@ -15,7 +15,7 @@ public class PointLight extends Light implements LightSource {
     protected Point3D _position;
     protected double _kC,_kL,_kQ;
     protected Sphere _Sphere; //new
-///////////////////////////////////////////////////////////////////////////////////
+/*************************************************************************/
 
 
     //ctor:
@@ -35,7 +35,7 @@ public class PointLight extends Light implements LightSource {
         _Sphere = sp;
     }
 
-////////////////////////////////////////////////////////////////////////////
+/*************************************************************************/
 
     /**The function returns the light intensity that comes from the light
      * source to a certain point that is accepted as a parameter.
