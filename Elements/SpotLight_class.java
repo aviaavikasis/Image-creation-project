@@ -14,8 +14,8 @@ public class SpotLight extends PointLight {
 
     Vector _direction;
 
-/////////////////////////////////////////////////////////////////
-
+/*************************************************************************/
+    
     //ctor:
     public SpotLight(Color intensity,Point3D position, double kC, double kL, double kQ, Vector v)
     {
