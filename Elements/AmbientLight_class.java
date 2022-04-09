@@ -12,7 +12,7 @@ public class AmbientLight extends Light {
 Color Ia; // Light intensity by components
 double Ka; // Coefficient of attenuation of light
 
-///////////////////////////////////////////////////////////////////////
+/*********************************************************/
 
 //ctor:
 public AmbientLight(Color _ia,double _ka)
